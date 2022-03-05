@@ -1,0 +1,1197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous" />
+  <style>
+    /* td.test {
+      background-color: #666e70;
+    }
+
+    td.no17 {
+      background-color: #17b8d4;
+    } */
+
+    td.soal {
+      cursor: pointer;
+    }
+
+    .hangus {
+      background-color: black !important;
+    }
+  </style>
+
+  <title>Hello, world!</title>
+</head>
+
+<body>
+  <div id="main">
+    <!-- <div id="inputtim">
+        <div class="mb-3 row">
+          <label for="tim1" class="col-2 col-form-label">Tim 1</label>
+          <div class="col-10">
+            <input type="text" id="tim1" class="form-control" />
+          </div>
+        </div>
+        <div class="mb-3 row">
+          <label for="tim2" class="col-2 col-form-label">Tim 2</label>
+          <div class="col-10">
+            <input type="text" class="form-control" id="tim2" />
+          </div>
+        </div>
+        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+          <button class="btn btn-primary" id="btninputim" type="button">
+            Button
+          </button>
+        </div>
+      </div> -->
+    <div id="sectiontts" class="vh-100">
+      <div id="namatim" class="d-flex justify-content-between">
+        <div id="infotim1">
+          <label id="namatim1" class="d-block">Nama : Tim A</label>
+          <label id="skortim1" class="d-block">Skor : 300</label>
+        </div>
+        <div id="infotim2">
+          <label id="namatim1" class="d-block">Nama : Tim B</label>
+          <label id="skortim1" class="d-block">Skor : 400</label>
+        </div>
+      </div>
+      <div id="ttsboard">
+        <table class="table table-borderless">
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+        </table>
+        <p id="timer" class="text-center"></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal -->
+  <div class="modal fade" id="soalModal" tabindex="-1" aria-labelledby="soalModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="soalModalLabel">Modal title</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          ...
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" id="btnSalah">Salah</button>
+          <button type="button" class="btn btn-primary" id="btnBenar">Benar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Optional JavaScript; choose one of the two! -->
+
+  <!-- Option 1: Bootstrap Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
+  </script>
+  <script src="https://code.jquery.com/jquery-3.6.0.slim.js"
+    integrity="sha256-HwWONEZrpuoh951cQD1ov2HUK5zA5DwJ1DNUXaM6FsY=" crossorigin="anonymous"></script>
+  <script>
+    var myModal = new bootstrap.Modal(document.getElementById("soalModal"), {});
+    let skorA = 0;
+    let skorB = 0;
+    //desc 1.posisi row 2.poisis col 3.jumlah kotak
+    const soal = [{
+        no: 1,
+        pertanyaan: 'Proses termodinamika yang terjadi pada volume konstan disebut dengan',
+        jawaban: 'isokhorik',
+        salah: 0,
+        poin: 0,
+        drive: '',
+        tipe: 'mendatar',
+        desc: [14, 1],
+        get lenJawaban() {
+          return this.jawaban.trim().length;
+        }
+      }, {
+        no: 2,
+        pertanyaan: 'Derajat kebebasan',
+        jawaban: 'Entropi',
+        salah: 0,
+        poin: 0,
+        drive: '',
+        tipe: 'menurun',
+        desc: [10, 6],
+        get lenJawaban() {
+          return this.jawaban.trim().length;
+        }
+      },
+      {
+        no: 3,
+        pertanyaan: 'Bumi berasal dari kata',
+        jawaban: 'erda ',
+        salah: 0,
+        poin: 0,
+        drive: 'https://drive.google.com/file/d/1NWzziVja7lgnCOVeSLLVP2Ps8uvT28vU/view?usp=sharing',
+        tipe: 'mendatar',
+        desc: [7, 3],
+        get lenJawaban() {
+          return this.jawaban.trim().length;
+        }
+      },
+      {
+        no: 4,
+        pertanyaan: 'Neuron yang menghantarkan impuls dari sistem saraf pusat ke efektor.',
+        jawaban: 'Motorik',
+        salah: 0,
+        poin: 0,
+        drive: 'https://drive.google.com/file/d/1Iyy053T6OVLiNhwoeGuoIx-u5SMhpKaY/view?usp=sharing',
+        tipe: 'mendatar',
+        desc: [16, 1],
+        get lenJawaban() {
+          return this.jawaban.trim().length;
+        }
+      },
+      {
+        no: 5,
+        pertanyaan: 'Teori model atom berbentuk bola berongga yang tersusun atas inti atom dan elektron yang mengelilinginya, dikemukakan oleh',
+        jawaban: 'Rutherford',
+        salah: 0,
+        poin: 0,
+        drive: 'https://drive.google.com/file/d/1VYlQ8xp8OERvFtRHl_9im0pHKomR02JT/view?usp=sharing',
+        tipe: 'mendatar',
+        desc: [10, 2],
+        get lenJawaban() {
+          return this.jawaban.trim().length;
+        }
+      },
+      {
+        no: 6,
+        pertanyaan: 'Alat yang berfungsi untuk meningkatkan konsentrasi larutan dengan mengurangi kadar air di dalam larutan adalah',
+        jawaban: 'evaporator',
+        salah: 0,
+        poin: 0,
+        drive: 'https://drive.google.com/file/d/1yjFE2sRNNuluQUhGyQNmUjhqMN7Eg2fd/view?usp=sharing',
+        tipe: 'menurun',
+        desc: [2, 9],
+        get lenJawaban() {
+          return this.jawaban.trim().length;
+        }
+      },
+      {
+        no: 7,
+        pertanyaan: 'Pada senyawa kompleks, ada senyawa penyusun yang mendonorkan pasangan elektronnya pada atom pusat. senyawa ini disebut dengan?',
+        jawaban: 'Ligan',
+        salah: 0,
+        poin: 0,
+        drive: 'https://drive.google.com/file/d/1cN4J2Y5h608xXWS7F73HGG5U7kew-2OE/view?usp=sharing',
+        tipe: 'mendatar',
+        desc: [4, 6],
+        get lenJawaban() {
+          return this.jawaban.trim().length;
+        }
+      },
+      {
+        no: 8,
+        pertanyaan: 'Suatu inhibitor yang digunakan untuk menghambat auto-oksidasi disebut?',
+        jawaban: 'antioksidan',
+        salah: 0,
+        poin: 0,
+        drive: '',
+        tipe: 'mendatar',
+        desc: [8, 9],
+        get lenJawaban() {
+          return this.jawaban.trim().length;
+        }
+      },
+      {
+        no: 9,
+        pertanyaan: 'Terdiri atas satu lapis sel, tersusun atas sel-sel hidup, tidak memiliki klorofil.',
+        jawaban: 'Epidermis',
+        salah: 0,
+        poin: 0,
+        drive: 'https://drive.google.com/file/d/1yjFE2sRNNuluQUhGyQNmUjhqMN7Eg2fd/view?usp=sharing',
+        tipe: 'menurun',
+        desc: [5, 17],
+        get lenJawaban() {
+          return this.jawaban.trim().length;
+        }
+      },
+      {
+        no: 10,
+        pertanyaan: 'Tanaman Golden Rice yang diproduksi secara rekayasa genetika melalui teknik DNA rekombinan',
+        jawaban: 'Transgenik',
+        salah: 0,
+        poin: 0,
+        drive: 'https://drive.google.com/file/d/1-h8S8b1aioPTJN3a3BjzD4lR-Cpoa5P1/view?usp=sharing',
+        tipe: 'menurun',
+        desc: [5, 19],
+        get lenJawaban() {
+          return this.jawaban.trim().length;
+        }
+      },
+      {
+        no: 11,
+        pertanyaan: '"Benda yang dicelupkan seluruhnya dalam zat cair selalu menggantikan volume zat cair yang sama dengan volume benda itu sendiri." Pernyataan itu adalah awal ditemukannya Hukum',
+        jawaban: 'Archimedes',
+        salah: 0,
+        poin: 0,
+        drive: 'https://drive.google.com/file/d/1yjFE2sRNNuluQUhGyQNmUjhqMN7Eg2fd/view?usp=sharing',
+        tipe: 'mendatar',
+        desc: [7, 19],
+        get lenJawaban() {
+          return this.jawaban.trim().length;
+        }
+      },
+      {
+        no: 12,
+        pertanyaan: 'Pindah silang (crossing over) antara kromatid dan kromosom homolog terjadi saat fase profase 1 adalah proses pembelahan',
+        jawaban: 'Meiosis',
+        salah: 0,
+        poin: 0,
+        drive: 'https://drive.google.com/file/d/1ikqqfgDTyGrpxMvHabfH52D-UXn7kRzu/view?usp=sharing',
+        tipe: 'menurun',
+        desc: [6, 25],
+        get lenJawaban() {
+          return this.jawaban.trim().length;
+        }
+      },
+      {
+        no: 13,
+        pertanyaan: 'Mulai terbentuk membran inti, sitoplasma menebal dan terjadi sitokinesis',
+        jawaban: 'Telofase',
+        salah: 0,
+        poin: 0,
+        drive: 'https://drive.google.com/file/d/1EdnpJBNzQXY-kFmfu13nKn8QWi45LhXe/view?usp=sharing',
+        tipe: 'mendatar',
+        desc: [9, 22],
+        get lenJawaban() {
+          return this.jawaban.trim().length;
+        }
+      },
+      {
+        no: 14,
+        pertanyaan: 'Komponen yang sukar menguap atau non volatile biasanya disebut',
+        jawaban: 'solute',
+        salah: 0,
+        poin: 0,
+        drive: '',
+        tipe: 'menurun',
+        desc: [9, 28],
+        get lenJawaban() {
+          return this.jawaban.trim().length;
+        }
+      },
+      {
+        no: 15,
+        pertanyaan: 'Unsur logam alkali  yang menghasilkan warna nyala api biru adalah',
+        jawaban: 'Cesium',
+        salah: 0,
+        poin: 0,
+        drive: 'https://drive.google.com/file/d/1-YkVPYmQxVuAJNRTNh47ACN8GyJcAi3G/view?usp=sharing',
+        tipe: 'menurun',
+        desc: [6, 3],
+        get lenJawaban() {
+          return this.jawaban.trim().length;
+        }
+      },
+      {
+        no: 16,
+        pertanyaan: 'Suatu hal yang dapat hadir tanpa keberadaan gravitasi namun memerlukan gaya',
+        jawaban: 'Inersia',
+        salah: 0,
+        poin: 0,
+        drive: '',
+        tipe: 'mendatar',
+        desc: [14, 26],
+        get lenJawaban() {
+          return this.jawaban.trim().length;
+        }
+      },
+      {
+        no: 17,
+        pertanyaan: 'Suatu alkena jika direaksikan dengan MCPBA (asam m-kloro perbenzoat) akan menghasilkan suatu cincin',
+        jawaban: 'epoksida',
+        salah: 0,
+        poin: 75,
+        tipe: 'menurun',
+        desc: [9, 31],
+        get lenJawaban() {
+          return this.jawaban.trim().length;
+        }
+      }, {
+        no: 18,
+        pertanyaan: "Salah satu syarat agar suatu molekul cincin dapat dikatakan sebagai senyawa aromatis adalah harus mengikuti aturan",
+        jawaban: "huckel",
+        salah: 0,
+        poin: 0,
+        tipe: 'mendatar',
+        desc: [2, 5],
+        get lenJawaban() {
+          return this.jawaban.trim().length;
+        }
+      },
+      {
+        no: 19,
+        pertanyaan: 'Pada konformasi kursi, untuk menghasilkan kestabilan senyawa yang tinggi, gugus molekul yang lebih berat haruslah berada di daerah',
+        jawaban: 'ekuatorial',
+        salah: 0,
+        poin: 75,
+        drive: '',
+        tipe: 'mendatar',
+        desc: [16, 28],
+        get lenJawaban() {
+          return this.jawaban.trim().length;
+        }
+      },
+      {
+        no: 20,
+        pertanyaan: 'Salah satu kelompok reagensia yang paling bermanfaat dalam intesi organik adalah organomagnesium halida (RMgX), dengan R adalah alil, vinil, maupun aril. Senyawa-senyawa ini disebut dengan reagen',
+        jawaban: 'grignard',
+        salah: 0,
+        poin: 100,
+        drive: '',
+        tipe: 'menurun',
+        desc: [11, 36],
+        get lenJawaban() {
+          return this.jawaban.trim().length;
+        }
+      },
+    ];
+
+    // merah = $('table tr:nth-child(4) td:nth-child(6)');
+    // merah.addClass('no18');
+
+    function getRandomColor() {
+      var letters = '0123456789ABCDEF';
+      var color = '#';
+      for (var i = 0; i < 6; i++) {
+        color += letters[Math.floor(Math.random() * 16)];
+      }
+      return color;
+    }
+
+    // generate kotak2 soal
+    soal.forEach(e => {
+      const posisiRow = e.desc[0];
+      const posisiCol = e.desc[1]; //6
+      const jumlahKotak = e.lenJawaban; //5
+      const color = getRandomColor();
+      if (e.tipe == 'mendatar') {
+        let n = 0;
+        while (n < jumlahKotak) {
+          $(`table tr:nth-child(${posisiRow}) td:nth-child(${posisiCol+n})`).addClass(
+            `no${e.no} soal border`).css(
+            'background-color', `${color}`);
+          n += 1;
+        }
+      } else {
+        let n = 0;
+        while (n < jumlahKotak) {
+          $(`table tr:nth-child(${posisiRow+n}) td:nth-child(${posisiCol})`).addClass(
+            `no${e.no} soal border`).css(
+            'background-color', `${color}`);
+          n += 1;
+        }
+      }
+    });
+
+
+
+
+    $("body").on("click", ".soal", function () {
+      const className = $(this).attr('class');
+      const regex = /no[\d]+/g;
+      const found = [...className.matchAll(regex)];
+      let nomor;
+      if (found.length == 2) {
+        nomor = found[1][0].split('no');
+      } else {
+        nomor = found[0][0].split('no');
+      }
+      nomor = nomor[1];
+
+      let pertanyaan = "";
+      soal.forEach(e => {
+        if (e.no == nomor) {
+          pertanyaan = e.pertanyaan;
+        }
+      });
+
+      $('#soalModalLabel').html('Nomor ' + nomor);
+      $('.modal-body').html(pertanyaan + " ....");
+      $('#btnSalah').attr('onclick', 'Salah(' + nomor + ')');
+      $('#btnBenar').attr('onclick', 'Benar(' + nomor + ')');
+
+      myModal.show();
+    });
+
+    function Salah(nomor) {
+      const index = soal.findIndex(e => e.no === nomor);
+      let salah = soal[index].salah;
+      salah = salah + 1;
+      soal[index].salah = salah;
+      if (salah == 2) {
+        const nomorSoal = document.getElementsByClassName('no' + nomor);
+        for (let i = 0; i < nomorSoal.length; i++) {
+          const classes = nomorSoal[i].classList.toString();
+          const regex = /no[\d]+/g;
+          const found = [...classes.matchAll(regex)];
+          if (found.length == 1) {
+            nomorSoal[i].classList.remove('soal');
+            nomorSoal[i].classList.add('hangus');
+          }
+          // nomorSoal[i].classList.remove(`no${nomor}`);
+        }
+        $(`.no${nomor}`).removeClass(`no${nomor}`);
+        $('#soalModal').modal('toggle');
+      }
+    }
+
+    function Benar(nomor) {
+      const nomorSoal = document.getElementsByClassName('no' + nomor);
+      const index = soal.findIndex(e => e.no === nomor);
+      const jawaban = soal[index].jawaban.split('');
+      for (let i = 0; i < nomorSoal.length; i++) {
+        nomorSoal[i].innerHTML = jawaban[i];
+        nomorSoal[i].classList.add('benar')
+        const classList = nomorSoal[i].classList.toString();
+        const regex = /no[\d]+/g;
+        const found = [...classList.matchAll(regex)];
+        if (found.length == 1) {
+          nomorSoal[i].classList.remove('soal');
+        }
+      }
+      $('#soalModal').modal('toggle');
+    }
+
+    // 0 = tim a, 1= tim b
+    let giliran = 1
+
+    function GantiGiliran() {
+      giliran = giliran == 1 ? 0 : 1;
+    }
+
+    let seconds = 10;
+    const timer = setInterval(function () {
+      let min = Math.floor(seconds / 60);
+      let sec = seconds % 60;
+      const teks = document.getElementById('timer');
+      teks.innerHTML = min + ':' + sec;
+      seconds--;
+      if (seconds < 0) {
+        clearInterval(timer);
+        teks.innerHTML = 'Waktu Habis!';
+      }
+    }, 1000);
+
+    $("body").on("click", "#btninputim", function () {
+      $("#inputtim").hide();
+    });
+  </script>
+</body>
+
+</html>
