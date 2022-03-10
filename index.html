@@ -32,34 +32,34 @@
 
 <body>
   <div id="main">
-    <!-- <div id="inputtim">
-        <div class="mb-3 row">
-          <label for="tim1" class="col-2 col-form-label">Tim 1</label>
-          <div class="col-10">
-            <input type="text" id="tim1" class="form-control" />
-          </div>
+    <div id="inputtim">
+      <div class="mb-3 row">
+        <label for="tim1" class="col-2 col-form-label">Tim 1</label>
+        <div class="col-10">
+          <input type="text" id="tim1" class="form-control" />
         </div>
-        <div class="mb-3 row">
-          <label for="tim2" class="col-2 col-form-label">Tim 2</label>
-          <div class="col-10">
-            <input type="text" class="form-control" id="tim2" />
-          </div>
+      </div>
+      <div class="mb-3 row">
+        <label for="tim2" class="col-2 col-form-label">Tim 2</label>
+        <div class="col-10">
+          <input type="text" class="form-control" id="tim2" />
         </div>
-        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-          <button class="btn btn-primary" id="btninputim" type="button">
-            Button
-          </button>
-        </div>
-      </div> -->
-    <div id="sectiontts" class="vh-100">
+      </div>
+      <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+        <button class="btn btn-primary" id="btninputim" type="button">
+          Button
+        </button>
+      </div>
+    </div>
+    <!-- <div id="sectiontts" class="vh-100">
       <div id="namatim" class="d-flex justify-content-between">
         <div id="infotim1">
           <label id="namatim1" class="d-block">Nama : Tim A</label>
-          <label id="skortim1" class="d-block">Skor : 300</label>
+          <label class="d-block">Skor : <span id="skortim1"></span> </label>
         </div>
         <div id="infotim2">
-          <label id="namatim1" class="d-block">Nama : Tim B</label>
-          <label id="skortim1" class="d-block">Skor : 400</label>
+          <label id="namatim2" class="d-block">Nama : Tim B</label>
+          <label class="d-block">Skor : <span id="skortim2"></span> </label>
         </div>
       </div>
       <div id="ttsboard">
@@ -767,9 +767,10 @@
             <td></td>
           </tr>
         </table>
-        <p id="timer" class="text-center"></p>
+        <p id="timer" class="text-center">Start!</p>
+        <p class="text-center">Giliran : <span id="giliran"></span></p>
       </div>
-    </div>
+    </div> -->
   </div>
 
   <!-- Modal -->
@@ -778,14 +779,18 @@
       <div class="modal-content">
         <div class="modal-header">
           <h5 class="modal-title" id="soalModalLabel">Modal title</h5>
+
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
           ...
         </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" id="btnSalah">Salah</button>
-          <button type="button" class="btn btn-primary" id="btnBenar">Benar</button>
+        <div class="modal-footer justify-content-between">
+          <h5 id="timersoal" class="modal-title">0:00</h5>
+          <div>
+            <button type="button" class="btn btn-secondary" id="btnSalah">Salah</button>
+            <button type="button" class="btn btn-primary" id="btnBenar">Benar</button>
+          </div>
         </div>
       </div>
     </div>
@@ -1099,10 +1104,8 @@
       }
     });
 
-
-
-
-    $("body").on("click", ".soal", function () {
+    let timerSoal;
+    $("body").on("click", ".soal", function (e) {
       const className = $(this).attr('class');
       const regex = /no[\d]+/g;
       const found = [...className.matchAll(regex)];
@@ -1118,8 +1121,15 @@
       soal.forEach(e => {
         if (e.no == nomor) {
           pertanyaan = e.pertanyaan;
+          return;
         }
       });
+      if (typeof timerSoal === 'undefined') {
+        startTimerSoal(nomor);
+      } else {
+        clearInterval(timerSoal);
+        startTimerSoal(nomor);
+      }
 
       $('#soalModalLabel').html('Nomor ' + nomor);
       $('.modal-body').html(pertanyaan + " ....");
@@ -1129,8 +1139,34 @@
       myModal.show();
     });
 
+    $('#soalModal').on('hidden.bs.modal', function () {
+      resetInterval();
+    });
+
+    function startTimerSoal(nomor) {
+      let detik = 10;
+      timerSoal = setInterval(function () {
+        let min = Math.floor(detik / 60);
+        let sec = detik % 60;
+        const teks = document.getElementById('timersoal');
+        teks.innerHTML = min + ':' + sec;
+        detik--;
+        if (detik < 0) {
+          clearInterval(timerSoal);
+          teks.innerHTML = 'Waktu Habis!';
+          Salah(`${nomor}`);
+        }
+      }, 1000)
+    }
+
+    function resetInterval() {
+      clearInterval(timerSoal);
+      const teks = document.getElementById('timersoal');
+      teks.innerHTML = '0:00';
+    }
+
     function Salah(nomor) {
-      const index = soal.findIndex(e => e.no === nomor);
+      const index = soal.findIndex(e => e.no == nomor);
       let salah = soal[index].salah;
       salah = salah + 1;
       soal[index].salah = salah;
@@ -1144,11 +1180,15 @@
             nomorSoal[i].classList.remove('soal');
             nomorSoal[i].classList.add('hangus');
           }
-          // nomorSoal[i].classList.remove(`no${nomor}`);
         }
+        resetInterval();
         $(`.no${nomor}`).removeClass(`no${nomor}`);
-        $('#soalModal').modal('toggle');
+        $('#soalModal').modal('hide');
+      } else {
+        resetInterval();
+        startTimerSoal(nomor);
       }
+      GantiGiliran();
     }
 
     function Benar(nomor) {
@@ -1165,28 +1205,39 @@
           nomorSoal[i].classList.remove('soal');
         }
       }
-      $('#soalModal').modal('toggle');
+      resetInterval();
+      $('#soalModal').modal('hide');
+      GantiGiliran();
     }
 
     // 0 = tim a, 1= tim b
+    let namaTimA;
+    let namaTimB;
     let giliran = 1
+    $('#giliran').html(1);
 
     function GantiGiliran() {
       giliran = giliran == 1 ? 0 : 1;
+      $('#giliran').html(giliran);
     }
 
-    let seconds = 10;
-    const timer = setInterval(function () {
-      let min = Math.floor(seconds / 60);
-      let sec = seconds % 60;
-      const teks = document.getElementById('timer');
-      teks.innerHTML = min + ':' + sec;
-      seconds--;
-      if (seconds < 0) {
-        clearInterval(timer);
-        teks.innerHTML = 'Waktu Habis!';
-      }
-    }, 1000);
+    function timerGame(seconds) {
+
+      let seconds = 180;
+      timerGame(seconds);
+
+      const timer = setInterval(function () {
+        let min = Math.floor(seconds / 60);
+        let sec = seconds % 60;
+        const teks = document.getElementById('timer');
+        teks.innerHTML = min + ':' + sec;
+        seconds--;
+        if (seconds < 0) {
+          clearInterval(timer);
+          teks.innerHTML = 'Waktu Habis!';
+        }
+      }, 1000);
+    }
 
     $("body").on("click", "#btninputim", function () {
       $("#inputtim").hide();
