@@ -47,11 +47,11 @@
       </div>
       <div class="d-grid gap-2 d-md-flex justify-content-md-end">
         <button class="btn btn-primary" id="btninputim" type="button">
-          Button
+          Start
         </button>
       </div>
     </div>
-    <!-- <div id="sectiontts" class="vh-100">
+    <div id="sectiontts" class="vh-100" style="display: none;">
       <div id="namatim" class="d-flex justify-content-between">
         <div id="infotim1">
           <label id="namatim1" class="d-block">Nama : Tim A</label>
@@ -770,7 +770,7 @@
         <p id="timer" class="text-center">Start!</p>
         <p class="text-center">Giliran : <span id="giliran"></span></p>
       </div>
-    </div> -->
+    </div>
   </div>
 
   <!-- Modal -->
@@ -1067,9 +1067,6 @@
       },
     ];
 
-    // merah = $('table tr:nth-child(4) td:nth-child(6)');
-    // merah.addClass('no18');
-
     function getRandomColor() {
       var letters = '0123456789ABCDEF';
       var color = '#';
@@ -1213,18 +1210,26 @@
     // 0 = tim a, 1= tim b
     let namaTimA;
     let namaTimB;
-    let giliran = 1
-    $('#giliran').html(1);
+    let giliran = 0;
+
+    function gantiNamaTim() {
+      $('#namatim1').html(`Nama : ${namaTimA}`);
+      $('#namatim2').html(`Nama : ${namaTimB}`);
+    }
 
     function GantiGiliran() {
       giliran = giliran == 1 ? 0 : 1;
-      $('#giliran').html(giliran);
+      $('#giliran').html(namaGiliran());
+    }
+
+    function namaGiliran() {
+      if (giliran == 0) {
+        return namaTimA;
+      }
+      return namaTimB;
     }
 
     function timerGame(seconds) {
-
-      let seconds = 180;
-      timerGame(seconds);
 
       const timer = setInterval(function () {
         let min = Math.floor(seconds / 60);
@@ -1239,8 +1244,17 @@
       }, 1000);
     }
 
+
+
+    let waktuGamePlay = 300;
     $("body").on("click", "#btninputim", function () {
+      namaTimA = $('#tim1').val()
+      namaTimB = $('#tim2').val()
       $("#inputtim").hide();
+      $('#sectiontts').show();
+      timerGame(waktuGamePlay);
+      gantiNamaTim();
+      $('#giliran').html(namaGiliran());
     });
   </script>
 </body>
