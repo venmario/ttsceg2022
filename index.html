@@ -55,11 +55,14 @@
       <div id="namatim" class="d-flex justify-content-between">
         <div id="infotim1">
           <label id="namatim1" class="d-block">Nama : Tim A</label>
-          <label class="d-block">Skor : <span id="skortim1"></span> </label>
+          <label class="d-block">Skor : <span id="skortim1">0</span> </label>
+        </div>
+        <div>
+          <p class="text-center">Giliran : <span id="giliran"></span></p>
         </div>
         <div id="infotim2">
           <label id="namatim2" class="d-block">Nama : Tim B</label>
-          <label class="d-block">Skor : <span id="skortim2"></span> </label>
+          <label class="d-block">Skor : <span id="skortim2">0</span> </label>
         </div>
       </div>
       <div id="ttsboard">
@@ -768,7 +771,7 @@
           </tr>
         </table>
         <p id="timer" class="text-center">Start!</p>
-        <p class="text-center">Giliran : <span id="giliran"></span></p>
+
       </div>
     </div>
   </div>
@@ -1138,6 +1141,7 @@
 
     $('#soalModal').on('hidden.bs.modal', function () {
       resetInterval();
+      console.log('ketutup');
     });
 
     function startTimerSoal(nomor) {
@@ -1203,8 +1207,11 @@
         }
       }
       resetInterval();
-      $('#soalModal').modal('hide');
+      if (soal[index].poin > 0) {
+        tambahSkor(soal[index].poin);
+      }
       GantiGiliran();
+      $('#soalModal').modal('hide');
     }
 
     // 0 = tim a, 1= tim b
@@ -1227,6 +1234,19 @@
         return namaTimA;
       }
       return namaTimB;
+    }
+
+    let skorTimA = 0;
+    let skorTimB = 0;
+
+    function tambahSkor(poin) {
+      if (giliran == 0) {
+        skorTimA += poin;
+        $('#skortim1').html(skorTimA);
+      } else {
+        skorTimB += poin;
+        $('#skortim2').html(skorTimB);
+      }
     }
 
     function timerGame(seconds) {
