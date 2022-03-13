@@ -31,8 +31,16 @@
 </head>
 
 <body>
-  <div id="main">
-    <div id="inputtim">
+  <div id="main" class="container">
+    <div id="inputtim" class="col-6 text-center">
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
       <div class="mb-3 row">
         <label for="tim1" class="col-2 col-form-label">Tim 1</label>
         <div class="col-10">
@@ -1145,7 +1153,7 @@
     });
 
     function startTimerSoal(nomor) {
-      let detik = 10;
+      let detik = 60;
       timerSoal = setInterval(function () {
         let min = Math.floor(detik / 60);
         let sec = detik % 60;
@@ -1167,6 +1175,7 @@
     }
 
     function Salah(nomor) {
+      alert("Tim " + namaGiliran() + " salah");
       const index = soal.findIndex(e => e.no == nomor);
       let salah = soal[index].salah;
       salah = salah + 1;
@@ -1266,7 +1275,7 @@
 
 
 
-    let waktuGamePlay = 300;
+    let waktuGamePlay = 1800;
     $("body").on("click", "#btninputim", function () {
       namaTimA = $('#tim1').val()
       namaTimB = $('#tim2').val()
