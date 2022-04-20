@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Overpass:400,700');
+body {
+    font-family: 'Overpass', sans-serif;
+    background-color: #dcffe4;
+}
+
+td {
+    height: 40px;
+    width: 40px;
+    background-color: #01934c;
+    color: #b8ffc9;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.myButton {
+    background-color: #01934c;
+    color: #dcffe4;
+    width: 100px;
+    border-radius: 50px;
+}
+
+.myButton:hover {
+    background-color: #03743e;
+}
+
+.myText {
+    font-weight: bold;
+    color: #01934c;
+    font-size: large;
+}
+
+.myTextBox {
+    background-color: transparent;
+    color: #01934c;
+    border: 2px solid #01934c;
+    font-weight: bold;
+}
+
+.myTextBox:focus {
+    background-color: transparent;
+    color: #01934c;
+    border: 2px solid #01934c;
+}
+
+.img-container {
+    margin-top: 75px;
+    margin-bottom: 50px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.img-container .img {
+    width: 70%;
+}
+
+.img-container .img img {
+    width: 100%;
+}
+
+
+.namatim {
+    background-color: #b8ffc9;
+    width: 100%;
+    padding: 25px 50px;
+    margin-top: 13px;
+    margin-bottom: 25px;
+    font-weight: bold;
+    color: #01934c;
+    font-size: large;
+    border-radius: 15px;
+}
